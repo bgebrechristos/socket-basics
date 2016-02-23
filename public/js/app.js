@@ -9,6 +9,8 @@ socket.on('connect', function() {
 socket.on('message', function(message) {
   //callback function gets data from the message we created on server.js
   console.log("New Message:\n" + message.text);
+  
+  jQuery('.messages').append('<p>' + message.text + '</p>')
 });
 
 //Handles submitting of new message
